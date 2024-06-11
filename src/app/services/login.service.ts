@@ -50,4 +50,9 @@ export class LoginService {
     });
   }
 
+  usuarioLogado(): boolean {
+    const authorization = ''+localStorage.getItem('Authorization');
+    return (authorization !== null && authorization !== '');
+  }
+
 }
