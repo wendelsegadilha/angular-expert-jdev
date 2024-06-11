@@ -37,4 +37,16 @@ export class AppComponent {
     this.loginService.logar(usuario);
   }
 
+  recuperarSenha(): void {
+    const usuario = this.loginObjeto();
+    const login = usuario.login;
+    
+    if (login == '' || login == null) {
+      alert("Informe o login para recuperar o senha");
+      return;
+    }
+
+    this.loginService.recuperarSenha(login);
+  }
+
 }

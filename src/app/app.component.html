@@ -17,7 +17,7 @@
                 </div>
                <div style="display: flex; justify-content: center; column-gap: 10px;">
                 <button type="submit" class="btn btn-primary" style="width: 180px;" (click)="fazerLogin()" [disabled]="!loginForm.valid">Acessar Sistema</button>
-                <button type="submit" class="btn btn-secondary" style="width: 180px;">Recuperar Acesso</button>
+                <button type="submit" class="btn btn-secondary" style="width: 180px;" (click)="recuperarSenha()">Recuperar Acesso</button>
                </div>
               </form>
         </div>

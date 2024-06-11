@@ -9,6 +9,7 @@ import { Usuario } from '../model/usuario';
 export class LoginService {
 
   private urlLogin = environment.urlApi + 'login';
+  private urlRecuperarsenha = environment.urlApi + 'recuperarSenha';
 
   constructor(private http: HttpClient) { }
 
@@ -25,6 +26,27 @@ export class LoginService {
         console.log(error)
         alert("Ocorreu um erro");;
       }
+    });
+  }
+
+  recuperarSenha(login: string) {
+    console.log('chamou o recuperar senha: ' + login);
+    return this.http.post<string>(this.urlRecuperarsenha, login).subscribe({
+
+      next: (res) => {
+        let msgObj = JSON.stringify(res);
+        const msgJson = JSON.parse(msgObj);
+        console.log(msgJson.msg);
+        alert(msgJson.msg);
+      },
+
+      error: (error) => {
+        let msgObj = JSON.stringify(error);
+        const msgJson = JSON.parse(msgObj);
+        console.log(msgJson.msg);
+        alert(msgJson.msg);
+      }
+
     });
   }
 
