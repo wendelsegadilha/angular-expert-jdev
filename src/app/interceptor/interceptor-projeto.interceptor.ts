@@ -17,8 +17,8 @@ export class interceptorProjetoInterceptor implements HttpInterceptor {
 
     const authorization = ''+localStorage.getItem('Authorization');
 
-    if (authorization !== null && authorization !== ''){
-      console.log('Interceptor: Tem token -> enviando na requisição');
+    if (authorization !== null && authorization !== '' && authorization != 'null'){
+      console.log('Interceptor: Tem token -> enviando na requisição', authorization);
       const authReq = request.clone({
         headers: request.headers.set('Authorization', authorization)
       });

@@ -1,25 +1,2 @@
-<div class="container">
-    <div class="row" style="display: flex; justify-content: center;">
-        <div style="width: 500px; margin-top: 15%; border: 1px solid #ccc; padding: 20px;">
-            <h1 style="text-align: center; font-size: 25px; width: 250px; margin: 0 auto 10px auto; color: #3b3a3a;" >{{tituloLogin}}</h1>
-            <form [formGroup]="loginForm">
-                <div class="row mb-3">
-                  <label for="login" class="col-sm-2 col-form-label">E-mail:</label>
-                  <div class="col-sm-10">
-                    <input type="email" class="form-control" id="login" name="login" formControlName="login">
-                  </div>
-                </div>
-                <div class="row mb-3">
-                  <label for="senha" class="col-sm-2 col-form-label" >Senha:</label>
-                  <div class="col-sm-10">
-                    <input type="password" class="form-control" id="senha"name="senha" formControlName="senha">
-                  </div>
-                </div>
-               <div style="display: flex; justify-content: center; column-gap: 10px;">
-                <button type="submit" class="btn btn-primary" style="width: 180px;" (click)="fazerLogin()" [disabled]="!loginForm.valid">Acessar Sistema</button>
-                <button type="submit" class="btn btn-secondary" style="width: 180px;" (click)="recuperarSenha()">Recuperar Acesso</button>
-               </div>
-              </form>
-        </div>
-    </div>
-</div>
+<app-navbar *ngIf="usuarioLogado()"></app-navbar>
+<router-outlet></router-outlet>
